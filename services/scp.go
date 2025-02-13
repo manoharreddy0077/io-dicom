@@ -75,6 +75,8 @@ func (s *scp) handleConnection(conn net.Conn) {
 		pdu.SetOnAssociationRequest(s.onAssociationRequest)
 	}
 
+	defer conn.Close()
+
 	var err error
 	var dco media.DcmObj
 	for err == nil {
@@ -88,7 +90,6 @@ func (s *scp) handleConnection(conn net.Conn) {
 			ddo, err := dimsec.CStoreReadRQ(pdu, dco)
 			if err != nil {
 				slog.Error("handleConnection, C-Store failed to read request", "ERROR", err.Error())
-				conn.Close()
 				return
 			}
 
@@ -99,14 +100,12 @@ func (s *scp) handleConnection(conn net.Conn) {
 			status := s.onCStoreRequest(pdu.GetAAssociationRQ(), ddo)
 			if err := dimsec.CStoreWriteRSP(pdu, dco, status); err != nil {
 				slog.Error("handleConnection, C-Store failed to write response", "ERROR", err.Error())
-				conn.Close()
 				return
 			}
 		case dicomcommand.CFindRequest:
 			ddo, err := dimsec.CFindReadRQ(pdu)
 			if err != nil {
 				slog.Error("handleConnection, C-Find failed to read request!")
-				conn.Close()
 				return
 			}
 			queryLevel := ddo.GetString(tags.QueryRetrieveLevel)
@@ -125,20 +124,17 @@ func (s *scp) handleConnection(conn net.Conn) {
 					}
 					if err := dimsec.CFindWriteRSP(pdu, dco, result, dicomstatus.Pending); err != nil {
 						slog.Error("handleConnection, C-Find failed to write response", "ERROR", err.Error())
-						conn.Close()
 						return
 					}
 				}
 
 				if err := dimsec.CFindWriteRSP(pdu, dco, results[len(results)-1], status); err != nil {
 					slog.Error("handleConnection, C-Find failed to write response", "ERROR", err.Error())
-					conn.Close()
 					return
 				}
 			} else {
 				if err := dimsec.CFindWriteRSP(pdu, dco, dco, status); err != nil {
 					slog.Error("handleConnection, C-Find failed to write response", "ERROR", err.Error())
-					conn.Close()
 					return
 				}
 			}
@@ -146,7 +142,6 @@ func (s *scp) handleConnection(conn net.Conn) {
 			ddo, err := dimsec.CMoveReadRQ(pdu)
 			if err != nil {
 				slog.Error("handleConnection, C-Move failed to read request!")
-				conn.Close()
 				return
 			}
 			moveLevel := ddo.GetString(tags.QueryRetrieveLevel)
@@ -159,26 +154,19 @@ func (s *scp) handleConnection(conn net.Conn) {
 
 			if err := dimsec.CMoveWriteRSP(pdu, dco, status, 0x00); err != nil {
 				slog.Error("slog.ErrorhandleConnection, C-Move failed to write response", "ERROR", err.Error())
-				conn.Close()
 				return
 			}
 		case dicomcommand.CEchoRequest:
 			if dimsec.CEchoReadRQ(dco) {
 				if err := dimsec.CEchoWriteRSP(pdu, dco); err != nil {
 					slog.Error("handleConnection, C-Echo failed to write response!")
-					conn.Close()
 					return
 				}
 			}
 		default:
 			slog.Error("handleConnection, service not implemented", "COMMAND", command)
-			conn.Close()
 			return
 		}
-	}
-
-	if err != nil {
-		conn.Close()
 	}
 }
 
