@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/tags"
+	"github.com/innovative-io/io-dicom/dictionary/tags"
 )
 
 type dictionary struct {

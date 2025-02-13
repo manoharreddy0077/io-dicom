@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/one-byte-data/obd-dicom/clients/httpclient"
+	"github.com/innovative-io/io-dicom/clients/httpclient"
 )
 
 const dictionaryURL string = "https://raw.githubusercontent.com/fo-dicom/fo-dicom/development/FO-DICOM.Core/Dictionaries/DICOM%20Dictionary.xml"

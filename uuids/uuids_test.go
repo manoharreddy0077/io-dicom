@@ -3,7 +3,7 @@ package uuids
 import (
 	"testing"
 
-	"github.com/one-byte-data/obd-dicom/imp"
+	"github.com/innovative-io/io-dicom/imp"
 )
 
 func Test_hash32(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"errors"
 	"log"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/transfersyntax"
+	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
 )
 
 // BufData - is an interface to buffer manipulation class

@@ -6,13 +6,13 @@ import (
 	"log/slog"
 	"strconv"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/sopclass"
-	"github.com/one-byte-data/obd-dicom/dictionary/tags"
-	"github.com/one-byte-data/obd-dicom/dictionary/transfersyntax"
-	"github.com/one-byte-data/obd-dicom/dimsec"
-	"github.com/one-byte-data/obd-dicom/media"
-	"github.com/one-byte-data/obd-dicom/network"
-	"github.com/one-byte-data/obd-dicom/network/dicomstatus"
+	"github.com/innovative-io/io-dicom/dictionary/sopclass"
+	"github.com/innovative-io/io-dicom/dictionary/tags"
+	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
+	"github.com/innovative-io/io-dicom/dimsec"
+	"github.com/innovative-io/io-dicom/media"
+	"github.com/innovative-io/io-dicom/network"
+	"github.com/innovative-io/io-dicom/network/dicomstatus"
 )
 
 // SCU - inteface to a scu

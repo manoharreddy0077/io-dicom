@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/sopclass"
+	"github.com/innovative-io/io-dicom/dictionary/sopclass"
 )
 
 func TestNewUIDitem(t *testing.T) {

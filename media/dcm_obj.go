@@ -9,12 +9,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/sopclass"
-	"github.com/one-byte-data/obd-dicom/dictionary/tags"
-	"github.com/one-byte-data/obd-dicom/dictionary/transfersyntax"
-	"github.com/one-byte-data/obd-dicom/jpeglib"
-	"github.com/one-byte-data/obd-dicom/openjpeg"
-	"github.com/one-byte-data/obd-dicom/transcoder"
+	"github.com/innovative-io/io-dicom/dictionary/sopclass"
+	"github.com/innovative-io/io-dicom/dictionary/tags"
+	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
+	"github.com/innovative-io/io-dicom/jpeglib"
+	"github.com/innovative-io/io-dicom/openjpeg"
+	"github.com/innovative-io/io-dicom/transcoder"
 )
 
 // DcmObj - DICOM Object structure

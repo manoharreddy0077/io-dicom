@@ -3,7 +3,7 @@ package network
 import (
 	"bufio"
 
-	"github.com/one-byte-data/obd-dicom/media"
+	"github.com/innovative-io/io-dicom/media"
 )
 
 // UIDitem - UIDitem

@@ -3,11 +3,11 @@ package services
 import (
 	"testing"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/tags"
-	"github.com/one-byte-data/obd-dicom/media"
-	"github.com/one-byte-data/obd-dicom/network"
-	"github.com/one-byte-data/obd-dicom/network/dicomstatus"
-	"github.com/one-byte-data/obd-dicom/utils"
+	"github.com/innovative-io/io-dicom/dictionary/tags"
+	"github.com/innovative-io/io-dicom/media"
+	"github.com/innovative-io/io-dicom/network"
+	"github.com/innovative-io/io-dicom/network/dicomstatus"
+	"github.com/innovative-io/io-dicom/utils"
 )
 
 func Test_scu_EchoSCU(t *testing.T) {

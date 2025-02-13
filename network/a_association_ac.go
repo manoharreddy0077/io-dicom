@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"strconv"
 
-	"github.com/one-byte-data/obd-dicom/dictionary/sopclass"
-	"github.com/one-byte-data/obd-dicom/dictionary/transfersyntax"
-	"github.com/one-byte-data/obd-dicom/media"
+	"github.com/innovative-io/io-dicom/dictionary/sopclass"
+	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
+	"github.com/innovative-io/io-dicom/media"
 )
 
 // AAssociationAC AAssociationAC

@@ -1,4 +1,4 @@
-[![Build Status](https://drone.onebytedata.net/api/badges/one-byte-data/obd-dicom/status.svg?ref=refs/heads/main)](https://drone.onebytedata.net/one-byte-data/obd-dicom)
+[![Build Status](https://drone.onebytedata.net/api/badges/innovative-io/io-dicom/status.svg?ref=refs/heads/main)](https://drone.onebytedata.net/innovative-io/io-dicom)
 
 # obd-dicom
 
@@ -7,7 +7,7 @@ One Byte Data DICOM Golang Library
 ## Install
 
 ```bash
-go get -u github.com/one-byte-data/obd-dicom
+go get -u github.com/innovative-io/io-dicom
 ```
 
 ## Usage
