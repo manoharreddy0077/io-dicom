@@ -14,7 +14,7 @@ func TestSetDefaultImplementation(t *testing.T) {
 			name: "Should set default implementation",
 			want: &implementation{
 				classUID: "1.2.826.0.1.3680043.10.90.999",
-				version:  "OBD-Dicom",
+				version:  "IO-Dicom",
 			},
 		},
 	}
@@ -41,11 +41,11 @@ func TestSetImplementation(t *testing.T) {
 			name: "Should set implementation",
 			args: args{
 				classUID: "1.2.826.0.1.3680043.10.90.999",
-				version:  "One-Byte-Data",
+				version:  "Innovative IO",
 			},
 			want: &implementation{
 				classUID: "1.2.826.0.1.3680043.10.90.999",
-				version:  "One-Byte-Data",
+				version:  "Innovative IO",
 			},
 		},
 	}
@@ -84,7 +84,7 @@ func TestGetImpVersion(t *testing.T) {
 	}{
 		{
 			name: "Should get default name",
-			want: "One-Byte-Data",
+			want: "Innovative IO",
 		},
 	}
 	for _, tt := range tests {
@@ -110,7 +110,7 @@ func Test_implementation_GetClassUID(t *testing.T) {
 			name: "Should get default class UID",
 			fields: fields{
 				classUID: "1.2.826.0.1.3680043.10.90.999",
-				version:  "One-Byte-Data",
+				version:  "Innovative IO",
 			},
 			want: "1.2.826.0.1.3680043.10.90.999",
 		},
@@ -150,9 +150,9 @@ func Test_implementation_GetVersion(t *testing.T) {
 			name: "Should get default name",
 			fields: fields{
 				classUID: "1.2.826.0.1.3680043.10.90.999",
-				version:  "One-Byte-Data",
+				version:  "Innovative IO",
 			},
-			want: "One-Byte-Data",
+			want: "Innovative IO",
 		},
 		{
 			name: "Should get default name",
@@ -160,7 +160,7 @@ func Test_implementation_GetVersion(t *testing.T) {
 				classUID: "",
 				version:  "",
 			},
-			want: "OBD-Dicom",
+			want: "IO-Dicom",
 		},
 	}
 	for _, tt := range tests {

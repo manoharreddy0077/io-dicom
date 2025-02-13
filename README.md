@@ -1,8 +1,8 @@
 [![Build Status](https://drone.onebytedata.net/api/badges/innovative-io/io-dicom/status.svg?ref=refs/heads/main)](https://drone.onebytedata.net/innovative-io/io-dicom)
 
-# obd-dicom
+# io-dicom
 
-One Byte Data DICOM Golang Library
+Innovative IO DICOM Golang Library
 
 ## Install
 

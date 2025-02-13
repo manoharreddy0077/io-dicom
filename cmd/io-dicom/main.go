@@ -19,7 +19,7 @@ var destination *network.Destination
 var version string
 
 func main() {
-	log.Printf("Starting odb-dicom %s\n\n", version)
+	log.Printf("Starting io-dicom %s\n\n", version)
 
 	media.InitDict()
 
