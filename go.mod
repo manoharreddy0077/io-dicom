@@ -1,5 +1,5 @@
-module github.com/manoharreddy0077/io-dicom
+module github.com/manoharreddy0077/c-storescp
 
 go 1.23
 
-require github.com/mattn/go-sqlite3 v1.14.24
+require github.com/manoharreddy0077/io-dicom v1.0.0
