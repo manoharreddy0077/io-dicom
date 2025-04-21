@@ -1,6 +1,6 @@
 package network
 
-import "github.com/innovative-io/io-dicom/media"
+import "github.com/manoharreddy0077/io-dicom/media"
 
 // AsyncOperationWindow - AsyncOperationWindow
 type AsyncOperationWindow interface {

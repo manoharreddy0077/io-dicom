@@ -9,12 +9,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/innovative-io/io-dicom/dictionary/sopclass"
-	"github.com/innovative-io/io-dicom/dictionary/tags"
-	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
-	"github.com/innovative-io/io-dicom/jpeglib"
-	"github.com/innovative-io/io-dicom/openjpeg"
-	"github.com/innovative-io/io-dicom/transcoder"
+	"github.com/manoharreddy0077/io-dicom/dictionary/sopclass"
+	"github.com/manoharreddy0077/io-dicom/dictionary/tags"
+	"github.com/manoharreddy0077/io-dicom/dictionary/transfersyntax"
+	"github.com/manoharreddy0077/io-dicom/jpeglib"
+	"github.com/manoharreddy0077/io-dicom/openjpeg"
+	"github.com/manoharreddy0077/io-dicom/transcoder"
 )
 
 // DcmObj - DICOM Object structure

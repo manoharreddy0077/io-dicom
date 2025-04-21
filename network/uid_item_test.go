@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/innovative-io/io-dicom/dictionary/sopclass"
+	"github.com/manoharreddy0077/io-dicom/dictionary/sopclass"
 )
 
 func TestNewUIDitem(t *testing.T) {

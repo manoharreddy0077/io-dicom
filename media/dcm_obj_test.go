@@ -3,7 +3,7 @@ package media
 import (
 	"testing"
 
-	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
+	"github.com/manoharreddy0077/io-dicom/dictionary/transfersyntax"
 )
 
 func TestNewDCMObjFromFile(t *testing.T) {

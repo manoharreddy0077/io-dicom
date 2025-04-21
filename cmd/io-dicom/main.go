@@ -7,12 +7,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/innovative-io/io-dicom/dictionary/tags"
-	"github.com/innovative-io/io-dicom/media"
-	"github.com/innovative-io/io-dicom/network"
-	"github.com/innovative-io/io-dicom/network/dicomstatus"
-	"github.com/innovative-io/io-dicom/services"
-	"github.com/innovative-io/io-dicom/utils"
+	"github.com/manoharreddy0077/io-dicom/dictionary/tags"
+	"github.com/manoharreddy0077/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/network"
+	"github.com/manoharreddy0077/io-dicom/network/dicomstatus"
+	"github.com/manoharreddy0077/io-dicom/services"
+	"github.com/manoharreddy0077/io-dicom/utils"
 )
 
 var destination *network.Destination

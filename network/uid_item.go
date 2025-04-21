@@ -3,7 +3,7 @@ package network
 import (
 	"bufio"
 
-	"github.com/innovative-io/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/media"
 )
 
 // UIDitem - UIDitem

@@ -5,7 +5,7 @@ Innovative IO DICOM Golang Library
 ## Install
 
 ```bash
-go get -u github.com/innovative-io/io-dicom
+go get -u github.com/manoharreddy0077/io-dicom
 ```
 
 ## Usage

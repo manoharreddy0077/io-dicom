@@ -4,7 +4,7 @@ name: default
 
 workspace:
   base: /go
-  path: src/github.com/innovative-io/${DRONE_REPO_NAME}
+  path: src/github.com/manoharreddy0077/${DRONE_REPO_NAME}
 
 trigger:
   event:
@@ -48,7 +48,7 @@ steps:
       #   - linux/amd64
       #   - darwin/arm64
       registry: ghcr.io
-      repo: ghcr.io/innovative-io/${DRONE_REPO_NAME}
+      repo: ghcr.io/manoharreddy0077/${DRONE_REPO_NAME}
       tags: dev
 
   - name: build-linux-latest
@@ -81,7 +81,7 @@ steps:
       #   - linux/amd64
       #   - linux/arm64
       registry: ghcr.io
-      repo: ghcr.io/innovative-io/${DRONE_REPO_NAME}
+      repo: ghcr.io/manoharreddy0077/${DRONE_REPO_NAME}
       tags:
         - latest
         - ${DRONE_TAG}

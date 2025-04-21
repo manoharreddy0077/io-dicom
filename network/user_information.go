@@ -5,7 +5,7 @@ import (
 	"errors"
 	"strconv"
 
-	"github.com/innovative-io/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/media"
 )
 
 // UserInformation - UserInformation

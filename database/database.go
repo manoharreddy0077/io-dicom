@@ -1,6 +1,6 @@
 package database
 
-import "github.com/innovative-io/io-dicom/media"
+import "github.com/manoharreddy0077/io-dicom/media"
 
 type Database interface {
 	AddPatient(dcmObj media.DcmObj) error

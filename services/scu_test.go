@@ -3,11 +3,11 @@ package services
 import (
 	"testing"
 
-	"github.com/innovative-io/io-dicom/dictionary/tags"
-	"github.com/innovative-io/io-dicom/media"
-	"github.com/innovative-io/io-dicom/network"
-	"github.com/innovative-io/io-dicom/network/dicomstatus"
-	"github.com/innovative-io/io-dicom/utils"
+	"github.com/manoharreddy0077/io-dicom/dictionary/tags"
+	"github.com/manoharreddy0077/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/network"
+	"github.com/manoharreddy0077/io-dicom/network/dicomstatus"
+	"github.com/manoharreddy0077/io-dicom/utils"
 )
 
 func Test_scu_EchoSCU(t *testing.T) {

@@ -6,12 +6,12 @@ import (
 	"log/slog"
 	"net"
 
-	"github.com/innovative-io/io-dicom/dictionary/tags"
-	"github.com/innovative-io/io-dicom/dimsec"
-	"github.com/innovative-io/io-dicom/media"
-	"github.com/innovative-io/io-dicom/network"
-	"github.com/innovative-io/io-dicom/network/dicomcommand"
-	"github.com/innovative-io/io-dicom/network/dicomstatus"
+	"github.com/manoharreddy0077/io-dicom/dictionary/tags"
+	"github.com/manoharreddy0077/io-dicom/dimsec"
+	"github.com/manoharreddy0077/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/network"
+	"github.com/manoharreddy0077/io-dicom/network/dicomcommand"
+	"github.com/manoharreddy0077/io-dicom/network/dicomstatus"
 )
 
 // SCP - Interface to scp

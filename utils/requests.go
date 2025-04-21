@@ -3,9 +3,9 @@ package utils
 import (
 	"time"
 
-	"github.com/innovative-io/io-dicom/dictionary/tags"
-	"github.com/innovative-io/io-dicom/media"
-	"github.com/innovative-io/io-dicom/uuids"
+	"github.com/manoharreddy0077/io-dicom/dictionary/tags"
+	"github.com/manoharreddy0077/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/uuids"
 )
 
 // DefaultCFindRequest - Creates a default C-Find request

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/innovative-io/io-dicom/dictionary/tags"
+	"github.com/manoharreddy0077/io-dicom/dictionary/tags"
 )
 
 type dictionary struct {

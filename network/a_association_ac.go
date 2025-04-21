@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"strconv"
 
-	"github.com/innovative-io/io-dicom/dictionary/sopclass"
-	"github.com/innovative-io/io-dicom/dictionary/transfersyntax"
-	"github.com/innovative-io/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/dictionary/sopclass"
+	"github.com/manoharreddy0077/io-dicom/dictionary/transfersyntax"
+	"github.com/manoharreddy0077/io-dicom/media"
 )
 
 // AAssociationAC AAssociationAC

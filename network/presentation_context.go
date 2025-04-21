@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"errors"
 
-	"github.com/innovative-io/io-dicom/media"
+	"github.com/manoharreddy0077/io-dicom/media"
 )
 
 // PresentationContext - PresentationContext
