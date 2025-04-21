@@ -1,4 +1,4 @@
-module github.com/innovative-io/io-dicom
+module github.com/manohar/io-dicom
 
 go 1.23
 

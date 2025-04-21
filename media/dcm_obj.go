@@ -852,21 +852,21 @@ func (obj *dcmObj) compress(i *int, img []byte, RGB bool, cols uint16, rows uint
 			if RGB {
 				offset = 3 * offset
 			}
-			if bitsa == 8 {
-				if RGB {
-					if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 3, &JPEGData, &JPEGBytes, 4); err != nil {
-						return err
-					}
-				} else {
-					if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 1, &JPEGData, &JPEGBytes, 4); err != nil {
-						return err
-					}
-				}
-			} else {
-				if err := jpeglib.EIJG16encode(img[offset/2:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
-					return err
-				}
-			}
+			// if bitsa == 8 {
+			// 	if RGB {
+			// 		if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 3, &JPEGData, &JPEGBytes, 4); err != nil {
+			// 			return err
+			// 		}
+			// 	} else {
+			// 		if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 1, &JPEGData, &JPEGBytes, 4); err != nil {
+			// 			return err
+			// 		}
+			// 	}
+			// } else {
+			// 	if err := jpeglib.EIJG16encode(img[offset/2:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
+			// 		return err
+			// 	}
+			// }
 			newtag = &DcmTag{
 				Group:     0xFFFE,
 				Element:   0xE000,
@@ -907,25 +907,25 @@ func (obj *dcmObj) compress(i *int, img []byte, RGB bool, cols uint16, rows uint
 		}
 		obj.InsertTag(index, newtag)
 		jpeg_size = 0
-		for j = 0; j < frames; j++ {
-			index++
-			offset = j * uint32(cols) * uint32(rows) * uint32(bitsa) / 8
-			if RGB {
-				offset = 3 * offset
-				if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 3, &JPEGData, &JPEGBytes, 0); err != nil {
-					return err
-				}
-			} else {
-				if bitsa == 8 {
-					if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
-						return err
-					}
-				} else {
-					if err := jpeglib.EIJG12encode(img[offset:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
-						return err
-					}
-				}
-			}
+		// for j = 0; j < frames; j++ {
+		// 	index++
+		// 	offset = j * uint32(cols) * uint32(rows) * uint32(bitsa) / 8
+		// 	if RGB {
+		// 		offset = 3 * offset
+		// 		if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 3, &JPEGData, &JPEGBytes, 0); err != nil {
+		// 			return err
+		// 		}
+		// 	} else {
+		// 		if bitsa == 8 {
+		// 			if err := jpeglib.EIJG8encode(img[offset:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
+		// 				return err
+		// 			}
+		// 		} else {
+		// 			if err := jpeglib.EIJG12encode(img[offset:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
+		// 				return err
+		// 			}
+		// 		}
+		// 	}
 			newtag = &DcmTag{
 				Group:     0xFFFE,
 				Element:   0xE000,
@@ -970,9 +970,9 @@ func (obj *dcmObj) compress(i *int, img []byte, RGB bool, cols uint16, rows uint
 		for j = 0; j < frames; j++ {
 			index++
 			offset = j * uint32(cols) * uint32(rows) * uint32(bitsa) / 8
-			if err := jpeglib.EIJG12encode(img[offset/2:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
-				return err
-			}
+			// if err := jpeglib.EIJG12encode(img[offset/2:], cols, rows, 1, &JPEGData, &JPEGBytes, 0); err != nil {
+			// 	return err
+			// }
 			newtag = &DcmTag{
 				Group:     0xFFFE,
 				Element:   0xE000,
@@ -1016,16 +1016,16 @@ func (obj *dcmObj) compress(i *int, img []byte, RGB bool, cols uint16, rows uint
 		for j = 0; j < frames; j++ {
 			index++
 			offset = j * uint32(cols) * uint32(rows) * uint32(bitsa) / 8
-			if RGB {
-				offset = 3 * offset
-				if err := openjpeg.J2Kencode(img[offset:], cols, rows, 3, bitsa, &JPEGData, &JPEGBytes, 0); err != nil {
-					return err
-				}
-			} else {
-				if err := openjpeg.J2Kencode(img[offset:], cols, rows, 1, bitsa, &JPEGData, &JPEGBytes, 0); err != nil {
-					return err
-				}
-			}
+			// if RGB {
+			// 	offset = 3 * offset
+			// 	if err := openjpeg.J2Kencode(img[offset:], cols, rows, 3, bitsa, &JPEGData, &JPEGBytes, 0); err != nil {
+			// 		return err
+			// 	}
+			// } else {
+			// 	if err := openjpeg.J2Kencode(img[offset:], cols, rows, 1, bitsa, &JPEGData, &JPEGBytes, 0); err != nil {
+			// 		return err
+			// 	}
+			// }
 			newtag = &DcmTag{
 				Group:     0xFFFE,
 				Element:   0xE000,
@@ -1069,16 +1069,16 @@ func (obj *dcmObj) compress(i *int, img []byte, RGB bool, cols uint16, rows uint
 		for j = 0; j < frames; j++ {
 			index++
 			offset = j * uint32(cols) * uint32(rows) * uint32(bitsa) / 8
-			if RGB {
-				offset = 3 * offset
-				if err := openjpeg.J2Kencode(img[offset:], cols, rows, 3, bitsa, &JPEGData, &JPEGBytes, 10); err != nil {
-					return err
-				}
-			} else {
-				if err := openjpeg.J2Kencode(img[offset:], cols, rows, 1, bitsa, &JPEGData, &JPEGBytes, 10); err != nil {
-					return err
-				}
-			}
+			// if RGB {
+			// 	offset = 3 * offset
+			// 	if err := openjpeg.J2Kencode(img[offset:], cols, rows, 3, bitsa, &JPEGData, &JPEGBytes, 10); err != nil {
+			// 		return err
+			// 	}
+			// } else {
+			// 	if err := openjpeg.J2Kencode(img[offset:], cols, rows, 1, bitsa, &JPEGData, &JPEGBytes, 10); err != nil {
+			// 		return err
+			// 	}
+			// }
 			newtag = &DcmTag{
 				Group:     0xFFFE,
 				Element:   0xE000,
@@ -1140,15 +1140,15 @@ func (obj *dcmObj) uncompress(i int, img []byte, size uint32, frames uint32, bit
 		for j = 0; j < frames; j++ {
 			offset = j * single
 			tag := obj.GetTagAt(i + 1)
-			if bitsa == 8 {
-				if err := jpeglib.DIJG8decode(tag.Data, tag.Length, img[offset:], single); err != nil {
-					return err
-				}
-			} else {
-				if err := jpeglib.DIJG16decode(tag.Data, tag.Length, img[offset:], single); err != nil {
-					return err
-				}
-			}
+			// if bitsa == 8 {
+			// 	if err := jpeglib.DIJG8decode(tag.Data, tag.Length, img[offset:], single); err != nil {
+			// 		return err
+			// 	}
+			// } else {
+			// 	if err := jpeglib.DIJG16decode(tag.Data, tag.Length, img[offset:], single); err != nil {
+			// 		return err
+			// 	}
+			// }
 			obj.DelTag(i + 1)
 		}
 		obj.DelTag(i + 1)
@@ -1156,15 +1156,15 @@ func (obj *dcmObj) uncompress(i int, img []byte, size uint32, frames uint32, bit
 		for j = 0; j < frames; j++ {
 			offset = j * single
 			tag := obj.GetTagAt(i + 1)
-			if bitsa == 8 {
-				if err := jpeglib.DIJG8decode(tag.Data, tag.Length, img[offset:], single); err != nil {
-					return err
-				}
-			} else {
-				if err := jpeglib.DIJG12decode(tag.Data, tag.Length, img[offset:], single); err != nil {
-					return err
-				}
-			}
+			// if bitsa == 8 {
+			// 	if err := jpeglib.DIJG8decode(tag.Data, tag.Length, img[offset:], single); err != nil {
+			// 		return err
+			// 	}
+			// } else {
+			// 	if err := jpeglib.DIJG12decode(tag.Data, tag.Length, img[offset:], single); err != nil {
+			// 		return err
+			// 	}
+			// }
 			obj.DelTag(i + 1)
 		}
 		obj.DelTag(i + 1)
@@ -1172,9 +1172,9 @@ func (obj *dcmObj) uncompress(i int, img []byte, size uint32, frames uint32, bit
 		for j = 0; j < frames; j++ {
 			offset = j * single
 			tag := obj.GetTagAt(i + 1)
-			if err := jpeglib.DIJG12decode(tag.Data, tag.Length, img[offset:], single); err != nil {
-				return err
-			}
+			// if err := jpeglib.DIJG12decode(tag.Data, tag.Length, img[offset:], single); err != nil {
+			// 	return err
+			// }
 			obj.DelTag(i + 1)
 		}
 		obj.DelTag(i + 1)
@@ -1182,9 +1182,9 @@ func (obj *dcmObj) uncompress(i int, img []byte, size uint32, frames uint32, bit
 		for j = 0; j < frames; j++ {
 			offset = j * single
 			tag := obj.GetTagAt(i + 1)
-			if err := openjpeg.J2Kdecode(tag.Data, tag.Length, img[offset:]); err != nil {
-				return err
-			}
+			// if err := openjpeg.J2Kdecode(tag.Data, tag.Length, img[offset:]); err != nil {
+			// 	return err
+			// }
 			obj.DelTag(i + 1)
 		}
 		obj.DelTag(i + 1)
@@ -1192,9 +1192,9 @@ func (obj *dcmObj) uncompress(i int, img []byte, size uint32, frames uint32, bit
 		for j = 0; j < frames; j++ {
 			offset = j * single
 			tag := obj.GetTagAt(i + 1)
-			if err := openjpeg.J2Kdecode(tag.Data, tag.Length, img[offset:]); err != nil {
-				return err
-			}
+			// if err := openjpeg.J2Kdecode(tag.Data, tag.Length, img[offset:]); err != nil {
+			// 	return err
+			// }
 			obj.DelTag(i + 1)
 		}
 		obj.DelTag(i + 1)
